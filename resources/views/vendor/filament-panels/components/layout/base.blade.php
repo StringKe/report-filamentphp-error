@@ -1,125 +1,132 @@
 @php use Filament\Support\Facades\FilamentView; @endphp
-@props([
-    'livewire',
-])
+@props(['livewire'])
 
-
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html
     lang="{{ str_replace('_', '-', app()->getLocale()) }}"
     dir="{{ __('filament-panels::layout.direction') ?? 'ltr' }}"
-    @class([
-        'fi min-h-screen',
-        'dark' => filament()->hasDarkModeForced(),
-    ])
+    @class(['fi min-h-screen', 'dark' => filament()->hasDarkModeForced()])
 >
-<head>
-    {{ FilamentView::renderHook('panels::head.start') }}
 
-    <meta charset="utf-8"/>
-    <meta name="csrf-token" content="{{ csrf_token() }}"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <head>
+        {{ FilamentView::renderHook('panels::head.start') }}
 
-    @if ($favicon = filament()->getFavicon())
-        <link rel="icon" href="{{ $favicon }}"/>
-    @endif
+        <meta charset="utf-8" />
+        <meta
+            name="csrf-token"
+            content="{{ csrf_token() }}"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1"
+        />
 
-    <title>
-        {{ filled($title = $livewire->getTitle()) ? "{$title} - " : null }}
-        {{ filament()->getBrandName() }}
-    </title>
+        @if ($favicon = filament()->getFavicon())
+            <link
+                rel="icon"
+                href="{{ $favicon }}"
+            />
+        @endif
 
-    {{ FilamentView::renderHook('panels::styles.before') }}
+        <title>
+            {{ filled($title = $livewire->getTitle()) ? "{$title} - " : null }}{{ filament()->getBrandName() }}
+        </title>
 
-    <style>
-        [x-cloak=''],
-        [x-cloak='x-cloak'],
-        [x-cloak='1'] {
-            display: none !important;
-        }
+        {{ FilamentView::renderHook('panels::styles.before') }}
 
-        @media (max-width: 1023px) {
-            [x-cloak='-lg'] {
+        <style>
+            [x-cloak=''],
+            [x-cloak='x-cloak'],
+            [x-cloak='1'] {
                 display: none !important;
             }
-        }
 
-        @media (min-width: 1024px) {
-            [x-cloak='lg'] {
-                display: none !important;
+            @media (max-width: 1023px) {
+                [x-cloak='-lg'] {
+                    display: none !important;
+                }
             }
-        }
-    </style>
 
-    @filamentStyles
-    @vite('resources/css/app.css')
-    {{ filament()->getTheme()->getHtml() }}
-    {{ filament()->getFontHtml() }}
+            @media (min-width: 1024px) {
+                [x-cloak='lg'] {
+                    display: none !important;
+                }
+            }
+        </style>
 
-    <style>
-        :root {
-            --font-family: {!! filament()->getFontFamily() !!};
-            --sidebar-width: {{ filament()->getSidebarWidth() }};
-            --collapsed-sidebar-width: {{ filament()->getCollapsedSidebarWidth() }};
-        }
-    </style>
+        @filamentStyles
+        @livewireStyles
+        @vite('resources/css/app.css')
+        {{ filament()->getTheme()->getHtml() }}
+        {{ filament()->getFontHtml() }}
 
-    {{ FilamentView::renderHook('panels::styles.after') }}
+        <style>
+            :root {
+                --font-family: {!! filament()->getFontFamily() !!};
+                --sidebar-width: {{ filament()->getSidebarWidth() }};
+                --collapsed-sidebar-width: {{ filament()->getCollapsedSidebarWidth() }};
+            }
+        </style>
 
-    @if (! filament()->hasDarkMode())
-        <script>
-            localStorage.setItem('theme', 'light')
-        </script>
-    @elseif (filament()->hasDarkModeForced())
-        <script>
-            localStorage.setItem('theme', 'dark')
-        </script>
-    @else
-        <script>
-            const theme = localStorage.getItem('theme') ?? 'system'
+        {{ FilamentView::renderHook('panels::styles.after') }}
 
-            if (
-                theme === 'dark' ||
-                (theme === 'system' &&
-                    window.matchMedia('(prefers-color-scheme: dark)')
+        @if (!filament()->hasDarkMode())
+            <script>
+                localStorage.setItem('theme', 'light')
+            </script>
+        @elseif (filament()->hasDarkModeForced())
+            <script>
+                localStorage.setItem('theme', 'dark')
+            </script>
+        @else
+            <script>
+                const theme = localStorage.getItem('theme') ?? 'system'
+
+                if (
+                    theme === 'dark' ||
+                    (theme === 'system' &&
+                        window.matchMedia('(prefers-color-scheme: dark)')
                         .matches)
-            ) {
-                document.documentElement.classList.add('dark')
-            }
-        </script>
-    @endif
+                ) {
+                    document.documentElement.classList.add('dark')
+                }
+            </script>
+        @endif
 
-    {{ FilamentView::renderHook('panels::head.end') }}
-</head>
+        {{ FilamentView::renderHook('panels::head.end') }}
+    </head>
 
-<body
-    class="min-h-screen overscroll-y-none bg-gray-50 font-normal text-gray-950 antialiased dark:bg-gray-950 dark:text-white"
->
-{{ FilamentView::renderHook('panels::body.start') }}
+    <body
+        class="min-h-screen overscroll-y-none bg-gray-50 font-normal text-gray-950 antialiased dark:bg-gray-950 dark:text-white"
+    >
+        {{ FilamentView::renderHook('panels::body.start') }}
 
-{{ $slot }}
+        {{ $slot }}
 
-@livewire(Filament\Livewire\Notifications::class)
+        @livewire(Filament\Livewire\Notifications::class)
 
-{{ FilamentView::renderHook('panels::scripts.before') }}
+        {{ FilamentView::renderHook('panels::scripts.before') }}
 
-@filamentScripts(withCore: true)
-@vite('resources/js/app.ts')
+        @livewireScriptConfig
+        @vite('resources/js/app.ts')
+        @filamentScripts(withCore: true)
 
-@if (config('filament.broadcasting.echo'))
-    <script>
-        window.addEventListener('DOMContentLoaded'{{-- 'livewire:navigated' --}}, () => {
-            window.Echo = new window.EchoFactory(@js(config('filament.broadcasting.echo')))
+        @if (config('filament.broadcasting.echo'))
+            <script>
+                window.addEventListener('DOMContentLoaded'
+                    {{-- 'livewire:navigated' --}}, () => {
+                        window.Echo = new window.EchoFactory(@js(config('filament.broadcasting.echo')))
 
-            window.dispatchEvent(new CustomEvent('EchoLoaded'))
-        })
-    </script>
-@endif
+                        window.dispatchEvent(new CustomEvent('EchoLoaded'))
+                    })
+            </script>
+        @endif
 
-@stack('scripts')
+        @stack('scripts')
 
-{{ FilamentView::renderHook('panels::scripts.after') }}
+        {{ FilamentView::renderHook('panels::scripts.after') }}
 
-{{ FilamentView::renderHook('panels::body.end') }}
-</body>
+        {{ FilamentView::renderHook('panels::body.end') }}
+    </body>
+
 </html>
