@@ -1,5 +1,6 @@
 <?php
 
+use App\Providers\Filament\AdminPanelProvider;
 use App\Providers\Filament\CompanyPanelProvider;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
@@ -163,6 +164,7 @@ return [
              */
 
             CompanyPanelProvider::class,
+            AdminPanelProvider::class,
 
             /*
              * Application Service Providers...

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dcdd193f894d52949f063ac15971ab9f",
+    "content-hash": "f40aaee2072d29154dc8d2e38d4ecc16",
     "packages": [
         {
             "name": "andreiio/blade-remix-icon",
@@ -1289,7 +1289,7 @@
         },
         {
             "name": "filament/actions",
-            "version": "v3.0.26",
+            "version": "v3.0.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/actions.git",
@@ -1339,16 +1339,16 @@
         },
         {
             "name": "filament/filament",
-            "version": "v3.0.26",
+            "version": "v3.0.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/panels.git",
-                "reference": "e1935d731fca955d9a3550c8ded4aadbe5291a65"
+                "reference": "257b4014dd320190f2cde95bdd52167911856a5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/panels/zipball/e1935d731fca955d9a3550c8ded4aadbe5291a65",
-                "reference": "e1935d731fca955d9a3550c8ded4aadbe5291a65",
+                "url": "https://api.github.com/repos/filamentphp/panels/zipball/257b4014dd320190f2cde95bdd52167911856a5b",
+                "reference": "257b4014dd320190f2cde95bdd52167911856a5b",
                 "shasum": ""
             },
             "require": {
@@ -1400,20 +1400,20 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-08-17T12:59:45+00:00"
+            "time": "2023-08-18T15:08:57+00:00"
         },
         {
             "name": "filament/forms",
-            "version": "v3.0.26",
+            "version": "v3.0.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/forms.git",
-                "reference": "b19e647ec5934f253e8f65b80d0e05aeea3b1bab"
+                "reference": "78c9f361b5648109329a335956447b42dd72f331"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/forms/zipball/b19e647ec5934f253e8f65b80d0e05aeea3b1bab",
-                "reference": "b19e647ec5934f253e8f65b80d0e05aeea3b1bab",
+                "url": "https://api.github.com/repos/filamentphp/forms/zipball/78c9f361b5648109329a335956447b42dd72f331",
+                "reference": "78c9f361b5648109329a335956447b42dd72f331",
                 "shasum": ""
             },
             "require": {
@@ -1456,20 +1456,20 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-08-17T12:59:43+00:00"
+            "time": "2023-08-18T15:08:43+00:00"
         },
         {
             "name": "filament/infolists",
-            "version": "v3.0.26",
+            "version": "v3.0.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/infolists.git",
-                "reference": "cf54b01d311e9d86a213cf4b7358610a123e1df2"
+                "reference": "cdba8f3c3dad9be366fa62c937cb76da9742e357"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/infolists/zipball/cf54b01d311e9d86a213cf4b7358610a123e1df2",
-                "reference": "cf54b01d311e9d86a213cf4b7358610a123e1df2",
+                "url": "https://api.github.com/repos/filamentphp/infolists/zipball/cdba8f3c3dad9be366fa62c937cb76da9742e357",
+                "reference": "cdba8f3c3dad9be366fa62c937cb76da9742e357",
                 "shasum": ""
             },
             "require": {
@@ -1507,11 +1507,11 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-08-17T12:59:47+00:00"
+            "time": "2023-08-18T15:08:46+00:00"
         },
         {
             "name": "filament/notifications",
-            "version": "v3.0.26",
+            "version": "v3.0.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/notifications.git",
@@ -1563,16 +1563,16 @@
         },
         {
             "name": "filament/support",
-            "version": "v3.0.26",
+            "version": "v3.0.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/support.git",
-                "reference": "0b252b050531f2cc820ddb9099c8caeffe490ca5"
+                "reference": "b1ff6fe670f74230c92c12af4e4eb627c2ff14d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/support/zipball/0b252b050531f2cc820ddb9099c8caeffe490ca5",
-                "reference": "0b252b050531f2cc820ddb9099c8caeffe490ca5",
+                "url": "https://api.github.com/repos/filamentphp/support/zipball/b1ff6fe670f74230c92c12af4e4eb627c2ff14d1",
+                "reference": "b1ff6fe670f74230c92c12af4e4eb627c2ff14d1",
                 "shasum": ""
             },
             "require": {
@@ -1616,20 +1616,20 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-08-17T12:59:44+00:00"
+            "time": "2023-08-18T15:09:08+00:00"
         },
         {
             "name": "filament/tables",
-            "version": "v3.0.26",
+            "version": "v3.0.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/tables.git",
-                "reference": "fae49e69ede51dfbd7f7f4218e89aec20298eb90"
+                "reference": "156520aca14d309d248c81fa9449047c6c8a5d1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/tables/zipball/fae49e69ede51dfbd7f7f4218e89aec20298eb90",
-                "reference": "fae49e69ede51dfbd7f7f4218e89aec20298eb90",
+                "url": "https://api.github.com/repos/filamentphp/tables/zipball/156520aca14d309d248c81fa9449047c6c8a5d1f",
+                "reference": "156520aca14d309d248c81fa9449047c6c8a5d1f",
                 "shasum": ""
             },
             "require": {
@@ -1669,11 +1669,11 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-08-17T12:59:46+00:00"
+            "time": "2023-08-18T15:09:15+00:00"
         },
         {
             "name": "filament/widgets",
-            "version": "v3.0.26",
+            "version": "v3.0.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/widgets.git",
